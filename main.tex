@@ -1,0 +1,47 @@
+\input{cib_w78_template.cls}
+\addbibresource{literature.bib} % Replace with your bib file name
+\geometry{top=3cm, bottom=2.5cm, left=3cm, right=3cm} % Your desired margins for regular pages
+
+\title{Here is a long paper title} 
+
+\newcommand{\shorttitle}{My Short Paper Title}
+\newcommand{\authorname}{Your Name}
+
+\begin{document}
+
+\maketitle
+% Enter your authors and affiliations here
+\authorinfo{Author One}{author1@email.com}{Affiliation 1}
+\authorinfo{Author Two}{author2@email.com}{Affiliation 2, Department Two}
+\authorinfo{Author Three (corresponding author)}{author3@email.com}{Affiliation 3 \footnotemark[1]}
+
+\keywords{formatting, rules, layout, full paper}
+
+\begin{abstract}
+Here si the abstract
+\end{abstract}
+
+\thispagestyle{empty}
+
+\section{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum \parencite{sample_citation1}. sdf.
+\lipsum[5]
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/cib_w78_logo_version_final.png}
+
+  \caption{Figure 1: This is a sample figure caption.} 
+\end{figure}
+
+
+\section{Methodology}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum \parencite{sample_citation2}.  Cras mattis consectetur purus sit amet fermentum. 
+
+\section{Results and Discussion}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. 
+
+\subsection{Lorem}
+\lipsum[1-10]  % Generate text
+
+\printbibliography 
+\end{document}
