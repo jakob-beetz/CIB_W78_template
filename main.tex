@@ -28,20 +28,41 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget 
 \lipsum[5]
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.6\textwidth]{img/cib_w78_logo_version_final.png}
+  \includegraphics[width=\textwidth]{img/CIB_logo_gross.png}
 
-  \caption{Figure 1: This is a sample figure caption.} 
+  \caption{This is a long description of the figure. Make sure that 
+  you are refering to the figure in your text. Pay attention, that the resultion is high enough for printing. Prefer vector formats such as EPS, SVG, PDF over raster images. If using raster images, prefer PNG and TIFF over JPG and GIF which wil likely result in ugly compression artifacts} 
 \end{figure}
 
 
 \section{Methodology}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum \parencite{sample_citation2}.  Cras mattis consectetur purus sit amet fermentum. 
 
+
 \section{Results and Discussion}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. 
 
+
+
+
 \subsection{Lorem}
-\lipsum[1-10]  % Generate text
+\lipsum[2]  % Generate text
+\begin{lstlisting}[caption={My Code Listing}, label=lst_my_code]
+import ifcopenshell
+
+def load_and_get_author(ifc_file: ifcopenshell.file) -> str:
+    model = ifc_file.create_entity('IfcProject')
+    for project in model.by_type('IfcProject'):
+        if project.OwnerHistory:
+            return project.OwnerHistory.OwningUser.ThePerson.FamilyName
+    return "Author not found"
+
+if __name__ == "__main__":
+    ifc_file = ifcopenshell.open("sample.ifc")  # Replace 'sample.ifc' with your actual IFC file
+    author_name = load_and_get_author(ifc_file)
+    print("Model Author:", author_name)
+\end{lstlisting}
+\lipsum[2]  % Generate text
 
 \printbibliography 
 \end{document}

@@ -13,9 +13,19 @@
 \usepackage{authblk}
 \usepackage{lipsum} 
 
+\usepackage{listings}
+\usepackage{xcolor} % Optional: For customizing colors if desired
+
+
+% Define DejaVu Sans Mono as the monospaced font
+
 % Fonts 
 \usepackage{roboto} % Roboto for headers
 \usepackage{libertine} % Linux Libertine O for body text
+\usepackage{sourcecodepro}
+
+
+
 \renewcommand{\footnotesize}{\fontsize{7}{9}\selectfont} % Smaller footnote text
 
 % Footer Configuration
@@ -36,13 +46,16 @@
 % Section Heading Formatting
 \setcounter{secnumdepth}{3} % Numbering up to 3 levels
 \titlespacing{\section}{0pt}{*1.8}{*0} 
+\titlespacing{\subsection}{0pt}{*1.8}{*0} 
+\titlespacing{\subsubsection}{0pt}{*1.8}{*0} 
 \setlength{\parindent}{0pt}
 % {left margin}{before spacing}{after spacing}
 \titleformat{\section}{\normalfont\bfseries\roboto}{\thesection.}{0.1em}{}
 \titleformat{\subsection}{\normalfont\roboto}{\thesubsection.}{0.1em}{}
 \titleformat{\subsubsection}{\normalfont\roboto}{\thesubsubsection.}{0.1em}{}
-
-\captionsetup{labelfont=bf, font={small}} 
+\captionsetup{labelfont=bf} 
+\renewcommand{\captionfont}{\small\roboto\ }
+% \captionsetup{labelfont=bf, font=roboto} 
 % Title Configuration
 
 \newcommand{\hlinethick}{\rule{\linewidth}{0.2pt}}  % Ensure this is present
@@ -99,6 +112,21 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%% Listings 
 
+\lstset{
+    basicstyle=\ttfamily\small\color{black}, % Use DejaVu Sans Mono, adjust size  
+    font=\roboto
+    numbers=left,              % Display line numbers on the left
+    numberstyle=\small\color{gray}, % Line number style
+    numbersep=5pt,             % Space between numbers and code
+    breaklines=true,           % Automatic line breaking for long lines
+    breakatwhitespace=true,    % Breaks can occur at whitespace
+    tabsize=3,                 % Number of spaces per tab
+    backgroundcolor=\color{white}, % Optional: set background color 
+    language=Python,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\color{gray},
+}
 
 
