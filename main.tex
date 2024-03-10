@@ -26,13 +26,35 @@ Here si the abstract
 \section{Introduction}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum \parencite{sample_citation1}. sdf.
 \lipsum[5]
-\begin{figure}[h!]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{img/CIB_logo_gross.png}
 
   \caption{This is a long description of the figure. Make sure that 
   you are refering to the figure in your text. Pay attention, that the resultion is high enough for printing. Prefer vector formats such as EPS, SVG, PDF over raster images. If using raster images, prefer PNG and TIFF over JPG and GIF which wil likely result in ugly compression artifacts} 
 \end{figure}
+
+\section{Table Examples}
+
+This statement automatically references the table below using its label: Table \ref{table:example}.
+
+
+\begin{table*} % Use the table* environment for full width tables
+	\caption{Full width table caption.}
+   \label{table:example}
+	\begin{tabular}{C{0.03\linewidth} L{0.25\linewidth} L{0.27\linewidth} L{0.16\linewidth} L{0.16\linewidth}}
+		\toprule
+		\textit{\#} & \textbf{Prospect} & \textbf{Industry} & \textbf{Revenue} & \textbf{Employees} \\
+		\midrule
+		\textit{1} & Gerlach Inc & Business Development & \$3M & 65\\
+		\textit{2} & Doyle and Sons & Law & \$1M & 15\\
+		\textit{3} & Heathcote Group & Consulting & \$12M & 250\\
+		\textit{4} & Goyette Inc & Advertising & \$5M & 100\\
+		\textit{5} & Holzdeppe GmbH & Manufacturing & \$23M & 75\\
+		\textit{6} & Bienias AG & Accounting & \$2.5M & 40\\
+		\bottomrule
+	\end{tabular}
+\end{table*}
 
 
 \section{Methodology}
@@ -47,22 +69,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget 
 
 \subsection{Lorem}
 \lipsum[2]  % Generate text
-\begin{lstlisting}[caption={My Code Listing}, label=lst_my_code]
-import ifcopenshell
+\begin{lstlisting}[caption={Showing a pseudo-code snippet of Dijkstra’s algorithm}, label=lst_my_code]
+S = a sequence
+g = goal
+while prev[g] is available:
+      insert g at the start of S
+      g = prev[g]
+end while
 
-def load_and_get_author(ifc_file: ifcopenshell.file) -> str:
-    model = ifc_file.create_entity('IfcProject')
-    for project in model.by_type('IfcProject'):
-        if project.OwnerHistory:
-            return project.OwnerHistory.OwningUser.ThePerson.FamilyName
-    return "Author not found"
-
-if __name__ == "__main__":
-    ifc_file = ifcopenshell.open("sample.ifc")  # Replace 'sample.ifc' with your actual IFC file
-    author_name = load_and_get_author(ifc_file)
-    print("Model Author:", author_name)
 \end{lstlisting}
 \lipsum[2]  % Generate text
+
+%----------------------------------------------------------------------------------------
+%	TABLES
+%----------------------------------------------------------------------------------------
+
+
+
+%------------------------------------------------
+
+
+
 
 \printbibliography 
 \end{document}

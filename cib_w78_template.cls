@@ -24,7 +24,20 @@
 \usepackage{libertine} % Linux Libertine O for body text
 \usepackage{sourcecodepro}
 
-
+% Gruvbox Light Colors (approximate)
+\definecolor{gruvbox-bg}{HTML}{F9F5D7}   % Background
+\definecolor{gruvbox-fg}{HTML}{3C3836}   % Main foreground
+\definecolor{gruvbox-red}{HTML}{CC241D}
+\definecolor{gruvbox-green}{HTML}{98971A}
+\definecolor{gruvbox-yellow}{HTML}{D79921}
+\definecolor{gruvbox-blue}{HTML}{458588}
+\definecolor{gruvbox-purple}{HTML}{B16286}
+\definecolor{gruvbox-aqua}{HTML}{689D6A}
+\definecolor{gruvbox-orange}{HTML}{D65D0E}
+\definecolor{cib-darkgreen}{HTML}{1B7F00}
+\definecolor{cib-midgreen}{HTML}{11A646}
+\definecolor{cib-lightgreen}{HTML}{13B24B}
+\definecolor{stringc}{rgb}{0.5, 0.1, 0.8}
 
 \renewcommand{\footnotesize}{\fontsize{7}{9}\selectfont} % Smaller footnote text
 
@@ -114,19 +127,39 @@
 
 %%%%%%%%%%%%%%%%%%%%%% Listings 
 
+
 \lstset{
-    basicstyle=\ttfamily\small\color{black}, % Use DejaVu Sans Mono, adjust size  
-    font=\roboto
+    basicstyle=\ttfamily\fontsize{8pt}{10pt}\selectfont\color{gruvbox-fg}, % Use DejaVu Sans Mono, adjust size  
     numbers=left,              % Display line numbers on the left
-    numberstyle=\small\color{gray}, % Line number style
+    numberstyle=\tiny\color{gray}, % Line number style
     numbersep=5pt,             % Space between numbers and code
     breaklines=true,           % Automatic line breaking for long lines
     breakatwhitespace=true,    % Breaks can occur at whitespace
     tabsize=3,                 % Number of spaces per tab
     backgroundcolor=\color{white}, % Optional: set background color 
     language=Python,
-    keywordstyle=\bfseries\color{blue},
-    commentstyle=\color{gray},
+    keywordstyle=\bfseries\color{gruvbox-blue},
+   stringstyle=\bfseries\color{gruvbox-orange},
+    commentstyle=\color{gray}
+}
+
+\hypersetup{
+    colorlinks = true,       % Color text of links instead of boxes
+    urlcolor   = cib-darkgreen,       % Set color to blue
+    linkcolor  = cib-darkgreen,        % Color of internal links (within the document)
+    citecolor = cib-darkgreen
 }
 
 
+%----------------------------------------------------------------------------------------
+%	TABLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{booktabs} % Required for better horizontal rules in tables
+
+\usepackage{array} % Required for manipulating table columns
+\renewcommand{\arraystretch}{1.25} % Increase the height of table rows
+
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % Define a new right-aligned paragraph column type
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % Define a new left-aligned (no justification) paragraph column type
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % Define a new centered paragraph column type
