@@ -2,7 +2,7 @@
 
 Along with rendered PDF examples.
 
-![PDF Renderings of the templates] (img/cib_w78_template_renderings.png)
+![PDF Renderings of the templates](img/cib_w78_template_renderings.png)
 
 
 There are two main branches of the full paper templates:
