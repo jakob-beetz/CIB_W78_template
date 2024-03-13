@@ -1,71 +1,103 @@
 \input{cib_w78_template.cls}
 \addbibresource{literature.bib} % Replace with your bib file name
-\geometry{top=3cm, bottom=2.5cm, left=3cm, right=3cm} % Your desired margins for regular pages
-
-\title{Here is a long paper title} 
-
-\newcommand{\shorttitle}{My Short Paper Title}
-\newcommand{\authorname}{Your Name}
-
 \begin{document}
 
+
+
+% the full title 
+\title{A Template for the Creation of a Full Paper Submission to the CIB W78 Conference } 
+
+
+% a short title to appear on every page. Two authors at most, abbreviate more with et al
+\newcommand{\shorttitle}{A Template for the CIB W78 Conference }
+\newcommand{\authorname}{Author, A. et al.}
+
+
+\thispagestyle{empty}
 \maketitle
+
+
 % Enter your authors and affiliations here
-\authorinfo{Author One}{author1@email.com}{Affiliation 1}
-\authorinfo{Author Two}{author2@email.com}{Affiliation 2, Department Two}
-\authorinfo{Author Three (corresponding author)}{author3@email.com}{Affiliation 3 \footnotemark[1]}
+\authorinfo{Jenn McArthur}{jennifer.mcarthur@torontomu.ca}{Faculty of Engineering and Architectural Science, Toronto Metropolitan University, Canada
+}
+\authorinfo{Robert Amor}{r.amor@auckland.ac.nz}{School of Computer Science, The University of Auckland, New Zealand}
+\authorinfo{Leon van Berlo} {leon.vanberlo@buildingsmart.org}{buildingSMART International Ltd, United Kingdom}
+\authorinfo{Jakob Beetz (corresponding author)}{beetz@dc.rwth-aachen.de }{Design Computation, RWTH Aachen University, Germany}
 
 \keywords{formatting, rules, layout, full paper}
 
 \begin{abstract}
-Here si the abstract
+In this paper, we define the general formatting style and use for full-paper contributions to the CIB W78 conference series. All rules are defined by means of written instructions that are at the same time demonstrated with examples by applying these rules to the text of this template document. They include instructions for the use of text, illustrations, tables, equations and source code. Even though this example abstract is shorter, the abstract submission should be limited to a maximum 150 words to guarantee a concise summary.
 \end{abstract}
 
-\thispagestyle{empty}
-
 \section{Introduction}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum \parencite{sample_citation1}. sdf.
-\lipsum[5]
+Writing scientific publications means spreading ideas. In order to guarantee, that these ideas can be freely distributed, we should make sure that no copyright issues are hampering this effort. Implementing such an approach begins with small things like free typography that is yet legible. In the following sections of this formatting instruction paper the various aspect the full-paper submission to the CIB W78 conference are documented. In section 2 the general formatting rules are explained. In section 3 formatting rules for special features such as illustrations, tables and formulas are explained.\parencite{sample_citation1}.
+
+\section{General Layout}
+
+In this section general layout instructions are provided and illustrated. 
+\subsection{Page Layout}
+The page should be size A4 (29.7 cm x 42 cm), the margins should be set to 2.54 cm at all sides. The footer should contain the name of the event (Roboto, 8pt), the top header of each page except for the first one should contain an abbreviated version of the paper title and authors oriented at the citation style introduced in section References, also set in Robot 8pt and the title set in bold.
+\subsection{Structuring the Document}
+In order to allow clean, navigable and machine-readable documents, the respective structuring mechanisms of the word-processors should be used. Vertical formatting should be done only through the paragraph vertical margins built into every style. 
+
+\subsubsection{Levels}
+A multi-level list style is provided in the template and example document that has three levels. The full paper should be limited to these three levels. Numbering of the appropriate sections is 
+set by setting the respective styles to \texttt{\textbackslash section, \textbackslash subsection and \textbackslash subsubsection}. Since the most commonly used text-processor has known issues regarding the consistency of its Author et al. 2016 A Template for the CIB W78 Conference 2016 Proc. of the 33rd CIB W78 Conference 2016, Oct. 31st  – Nov. 2nd  2016, Brisbane, Australia numbering system it is advised to leave these settings untouched. Should things go wrong, or different versions of the software be used (which have interoperability issues and inconsistencies among themselves), then the respective level should be recreated according to the following scheme: 1st level headings are set in Roboto Black 12pt, 2nd and 3rd level headings in Roboto Medium 11pt and 10pt. The distance to the body text on each level should be set to 6pt. 
+
+
+
+\subsection{Fonts and emphasis}
+three main font families that are available under permissive licenses and are distributed with the paper template on the conference website.
+The main body text is formatted in Linux Libertine O 11pt which is an open sourced font type featuring a wide range of Unicode glyphs in many different languages allowing its consistent use for a wide range of applications. It was designed as an alternative to serif body text fonts such as Times New Roman which are licensed but bundled with certain text-processors and thus seem ubiquitous.
+The “Linux Libertine O” font comes with advanced features such as ligatures and a dedicated italic variant that adheres to typographic conventions for readability and layout. It is distinctly different from merely setting the individual characters in a slanted fashion. The small ‘a’ character for example \textit{has a different look in italic}. \textbf{Bold text has a different kerning} to make it ‘jump out’ from the main body text. Both forms of emphasis should be used only where enhancing the readability of the overall text. Other forms of emphasis are discouraged.
+Section heading as well as the title are set in Roboto black which is freely available under an Apache license. To format monospaced text in listings or to set technical key words apart from the rest of the text, the freely available font SourceSans Open should be used but set in 10pt in the body text to cope with its relative height.
+
+
+\section{Figures, tables and equations}
+Figures in the full text such as the one provided in \ref{figure_example} should be aligned centered into the document. Raster images should have a printable resolution upwards of 300dpi and may be colored, gray-scale or black and white. All illustrations are preferably provided and inserted as vector graphics in formats such as Encapsulated Postscript (EPS), SVG or PDF. This choice depends on the text-processor platform. Different export capabilities of common tools such as Inkscape, Affinity Designer, Illustrator (and even MS Powerpoint) etc. can be used to achieve this goal. All figures should have a caption in Roboto 9pt with a caption label starting with \texttt{Figure} set in Roboto bold. All figures should be referenced in the body text. The wrapping should be set to “top and bottom” with a distance to the text of 0.2 cm. 
+
 \begin{figure}[ht]
+
   \centering
   \includegraphics[width=\textwidth]{img/CIB_logo_gross.png}
-
   \caption{This is a long description of the figure. Make sure that 
-  you are refering to the figure in your text. Pay attention, that the resultion is high enough for printing. Prefer vector formats such as EPS, SVG, PDF over raster images. If using raster images, prefer PNG and TIFF over JPG and GIF which wil likely result in ugly compression artifacts} 
+  you are refering to the figure in your text. Pay attention, that the resolution is high enough for printing. Prefer vector formats such as EPS, SVG, PDF over raster images. If using raster images, prefer PNG and TIFF over JPG and GIF which will likely lead to ugly compression artifacts} 
+   \label{figure_example}
 \end{figure}
 
-\section{Table Examples}
+\subsection{Tables}
+Tables should minimize the use of vertical lines to improve readability. Their content should be set in at least 9pt to allow readability. To circumvent sub-optimal handling of table distances in MS Word, a single empty line above and below the table in “W78 Normal” style should be used (as an exception to the general rule not to use empty lines for vertical formatting).
 
 This statement automatically references the table below using its label: Table \ref{table:example}.
 
-
-\begin{table*} % Use the table* environment for full width tables
-	\caption{Full width table caption.}
-   \label{table:example}
-	\begin{tabular}{C{0.03\linewidth} L{0.25\linewidth} L{0.27\linewidth} L{0.16\linewidth} L{0.16\linewidth}}
-		\toprule
-		\textit{\#} & \textbf{Prospect} & \textbf{Industry} & \textbf{Revenue} & \textbf{Employees} \\
-		\midrule
-		\textit{1} & Gerlach Inc & Business Development & \$3M & 65\\
-		\textit{2} & Doyle and Sons & Law & \$1M & 15\\
-		\textit{3} & Heathcote Group & Consulting & \$12M & 250\\
-		\textit{4} & Goyette Inc & Advertising & \$5M & 100\\
-		\textit{5} & Holzdeppe GmbH & Manufacturing & \$23M & 75\\
-		\textit{6} & Bienias AG & Accounting & \$2.5M & 40\\
+\begin{table}
+	\caption{Text block table caption.}
+    \tablefont
+	\begin{tabular}{L{0.25\textwidth} L{0.50\textwidth} R{0.15\textwidth}}
+      \toprule
+		 \textbf{Header Row} & \textbf{Header Cell 2} & \textbf{numbers} \\
+	   \midrule
+		\textbf{First} & Explanation of the value in the third column which is an aproximation of     &  3.141592 \\
+		\textbf{Second} & Another value  & 15\\
+		\textbf{Third} & a third one  & 250.00\\
 		\bottomrule
-	\end{tabular}
-\end{table*}
+    \end{tabular}
+    \label{table:example}
+\end{table}
 
+
+\subsection{Equations}
+
+\begin{equation}
+	\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+	\label{eq:example}
+\end{equation}
+
+\section{Table Examples}
 
 \section{Methodology}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum \parencite{sample_citation2}.  Cras mattis consectetur purus sit amet fermentum. 
-
-
-\section{Results and Discussion}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. 
-
-
-
 
 \subsection{Lorem}
 \lipsum[2]  % Generate text
@@ -84,12 +116,11 @@ end while
 %	TABLES
 %----------------------------------------------------------------------------------------
 
+\section{References}
+References should use a APA (author date) style to improve readability. Use \texttt{\textbackslash parencite} to refer enries in your \texttt{.bib} file.  Within the body text, single authors are cited as \parencite{sample_citation2}, two authors as \parencite{proceedins_example2023} and more than two as \parencite{sample_citation1}. Multiple references by the same combinations of authors can be suffixed by a Latin lower case characters such as \parencite{sample_citation2_with_a_same_year}. The bibliography style is illustrated in the References section of this template. The provision of DOI references or similar resolvable online resources in the form of hypertext links is strongly encouraged as a convenience to readers and reviewers. All cited online resources should state the date of their last visitation, like in \parencite{nasa_website2023}. The citation of dynamic content such as Wikipedia is strongly discouraged. References to websites can go to a footnote \footnote{\href{https://www.cibw78.org/}{Home of CIB W78}}
 
-
-%------------------------------------------------
-
-
-
+\section*{Acknowledgements} %use '*' asterisk to skip section numbering
+Tribute to contributors of the submission, funding organizations etc. should go separate from the text under an unnumbered heading. We would like to thank the countless members of the Open Source community for allowing us to use the fonts and tools that were involved in the creation of this template. The template itself can be reused and modified at will under the CC BY conditions. Intellectual property issues of the content of the papers using this template is a separate issue left to the respective conferences etc. 
 
 \printbibliography 
 \end{document}

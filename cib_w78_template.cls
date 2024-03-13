@@ -1,60 +1,50 @@
-\documentclass[a4paper, 12pt]{article}
+%=================================================================================================================================
+%  __    _   ___       _      ____  ___       ___    __    ___   ____  ___      _____  ____  _      ___   _      __   _____  ____ 
+% / /`  | | | |_)     \ \    / / / ( (_)     | |_)  / /\  | |_) | |_  | |_)      | |  | |_  | |\/| | |_) | |    / /\   | |  | |_  
+% \_\_, |_| |_|_)      \_\/\/ /_/  (_(_)     |_|   /_/--\ |_|   |_|__ |_| \      |_|  |_|__ |_|  | |_|   |_|__ /_/--\  |_|  |_|__ 
+%=================================================================================================================================
 
-% Packages
-% \usepackage{geometry} % For page margins
+\documentclass[a4paper, 12pt]{article}
+%=========================================================
+%                       Packages
+%=========================================================
+
 \usepackage[top=2cm, bottom=2.5cm, right=3cm, left=3cm]{geometry}
 \usepackage{fancyhdr} % For footer customization
 \usepackage{titlesec} % For section formatting
 \usepackage[style=apa, backend=biber]{biblatex} % For APA 7th edition citations
-\usepackage{hyperref}
+% \usepackage[pdftex,
+%             pdfauthor={Your Name},
+%             pdftitle={The Title},
+%             pdfsubject={The Subject},
+%             pdfkeywords={Some Keywords},
+%             pdfproducer={Latex with hyperref, or other system},
+%             pdfcreator={pdflatex, or other tool}]{hyperref}
+\usepackage[pdfusetitle]{hyperref}
 \usepackage{graphicx} % For figures
 \usepackage{caption} % For figure captions
 \usepackage{listings} % For code listings
 \usepackage{authblk}
 \usepackage{lipsum} 
-
+\usepackage{booktabs}
 \usepackage{listings}
 \usepackage{xcolor} % Optional: For customizing colors if desired
+\usepackage{titling} 
+\usepackage{array} % Required for manipulating table columns
 
 
-% Define DejaVu Sans Mono as the monospaced font
+\usepackage{apalike}
+\DefineBibliographyStrings{english}{%
+urlseen = {Retrieved},
+}
+\renewcommand{\figurename}{Figure} 
 
-% Fonts 
+%=========================================================
+%                       Typopgraphy 
+%=========================================================
 \usepackage{roboto} % Roboto for headers
 \usepackage{libertine} % Linux Libertine O for body text
 \usepackage{sourcecodepro}
-
-% Gruvbox Light Colors (approximate)
-\definecolor{gruvbox-bg}{HTML}{F9F5D7}   % Background
-\definecolor{gruvbox-fg}{HTML}{3C3836}   % Main foreground
-\definecolor{gruvbox-red}{HTML}{CC241D}
-\definecolor{gruvbox-green}{HTML}{98971A}
-\definecolor{gruvbox-yellow}{HTML}{D79921}
-\definecolor{gruvbox-blue}{HTML}{458588}
-\definecolor{gruvbox-purple}{HTML}{B16286}
-\definecolor{gruvbox-aqua}{HTML}{689D6A}
-\definecolor{gruvbox-orange}{HTML}{D65D0E}
-\definecolor{cib-darkgreen}{HTML}{1B7F00}
-\definecolor{cib-midgreen}{HTML}{11A646}
-\definecolor{cib-lightgreen}{HTML}{13B24B}
-\definecolor{stringc}{rgb}{0.5, 0.1, 0.8}
-
-\renewcommand{\footnotesize}{\fontsize{7}{9}\selectfont} % Smaller footnote text
-
-% Footer Configuration
-\pagestyle{fancy}
-\fancyhf{} 
-\fancyhead[R]{\scriptsize\roboto\authorname \ \bfseries\shorttitle} 
-% \fancyhead[R]{\footnotesize\roboto \bfseries\titlecase{\thetitle}} % Small title, centered in the header
-\fancyfoot[R]{\scriptsize\roboto CIB W78 conference 2024, Marakesh, Morrocco} % Centered page number in the footer 
-
-
-
-
-
-
-\usepackage{titling} 
-
 
 % Section Heading Formatting
 \setcounter{secnumdepth}{3} % Numbering up to 3 levels
@@ -68,21 +58,45 @@
 \titleformat{\subsubsection}{\normalfont\roboto}{\thesubsubsection.}{0.1em}{}
 \captionsetup{labelfont=bf} 
 \renewcommand{\captionfont}{\small\roboto\ }
-% \captionsetup{labelfont=bf, font=roboto} 
-% Title Configuration
-
-\newcommand{\hlinethick}{\rule{\linewidth}{0.2pt}}  % Ensure this is present
-% Author formatting rule
-% ... [Your existing template code]
+\renewcommand{\footnotesize}{\fontsize{7}{9}\selectfont} % Smaller footnote text
 
 
-\renewcommand{\headrulewidth}{0pt} % No line above the footer
-\fancypagestyle{plain}{
-    \fancyhf{} 
-    \renewcommand{\headrulewidth}{0pt} 
-}
+%=========================================================
+%                       Colors 
+%=========================================================
+%CIB International colors, picked from website 
+\definecolor{cib-darkgreen}{HTML}{1B7F00}
+\definecolor{cib-midgreen}{HTML}{11A646}
+\definecolor{cib-lightgreen}{HTML}{13B24B}
+
+% Gruvbox Light Colors (approximate)
+\definecolor{gruvbox-bg}{HTML}{F9F5D7}   % Background
+\definecolor{gruvbox-fg}{HTML}{3C3836}   % Main foreground
+\definecolor{gruvbox-red}{HTML}{CC241D}
+\definecolor{gruvbox-green}{HTML}{98971A}
+\definecolor{gruvbox-yellow}{HTML}{D79921}
+\definecolor{gruvbox-blue}{HTML}{458588}
+\definecolor{gruvbox-purple}{HTML}{B16286}
+\definecolor{gruvbox-aqua}{HTML}{689D6A}
+\definecolor{gruvbox-orange}{HTML}{D65D0E}
+
+\definecolor{stringc}{rgb}{0.5, 0.1, 0.8}
 
 
+%=========================================================
+%                       Header and footer 
+%=========================================================
+% Footer Configuration
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyhead[R]{\scriptsize\roboto\authorname \ \bfseries\shorttitle} 
+% \fancyhead[R]{\footnotesize\roboto \bfseries\titlecase{\thetitle}} % Small title, centered in the header
+\fancyfoot[R]{\scriptsize\roboto CIB W78 conference 2024, Marakesh, Morrocco} % Centered page number in the footer 
+
+
+%=========================================================
+%                       Author info
+%=========================================================
 \newcommand{\authorinfo}[3]{
   \noindent#1,  (\href{mailto:#2}{#2}) \\
   \noindent\textit{#3} \\
@@ -90,30 +104,25 @@
     }
 
 
-
-
+%=========================================================
+%                       Title
+%=========================================================
 \makeatletter 
-\vspace{-4cm} % Adjust the negative value as needed
 \renewcommand{\maketitle}{ 
-    \begin{center}
-    
+    \begin{flushleft}
         \hlinethick \\ 
-        \vspace{0.3cm} 
-        \bfseries\roboto\Large\@title 
-        \vspace{0.3cm} \\ 
-        \hlinethick \\ 
-
-    \end{center}
-
+        \vspace{0.2cm} 
+        \bfseries\roboto\Large\@title \\
+       
+        \hlinethick 
+    \end{flushleft}
 }
 \makeatother 
 
 
-
-
-
-\date{}
-
+%=========================================================
+%                       abstract and keywords 
+%=========================================================
 \renewenvironment{abstract}
                {\noindent\textbf{\roboto Abstract}\noindent\par} 
                {\noindent\par}
@@ -122,14 +131,11 @@
 \newcommand{\keywords}[1]{\noindent{\bfseries\roboto Keywords:} \normalfont#1\par\medskip}
 
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%% Listings 
-
-
+%=========================================================
+%                       Listings 
+%=========================================================
 \lstset{
-    basicstyle=\ttfamily\fontsize{8pt}{10pt}\selectfont\color{gruvbox-fg}, % Use DejaVu Sans Mono, adjust size  
+    basicstyle=\ttfamily\fontsize{9pt}{10pt}\selectfont\color{gruvbox-fg}, % Use DejaVu Sans Mono, adjust size  
     numbers=left,              % Display line numbers on the left
     numberstyle=\tiny\color{gray}, % Line number style
     numbersep=5pt,             % Space between numbers and code
@@ -151,15 +157,19 @@
 }
 
 
-%----------------------------------------------------------------------------------------
-%	TABLES
-%----------------------------------------------------------------------------------------
+%=========================================================
+%                       Tables 
+%=========================================================
+\newcommand{\hlinethick}{\rule{\linewidth}{0.2pt}}  % Ensure this is present
 
-\usepackage{booktabs} % Required for better horizontal rules in tables
+\renewcommand{\headrulewidth}{0pt} % No line above the footer
+\fancypagestyle{plain}{
+    \fancyhf{} 
+    \renewcommand{\headrulewidth}{0pt} 
+}
 
-\usepackage{array} % Required for manipulating table columns
 \renewcommand{\arraystretch}{1.25} % Increase the height of table rows
-
+\newcommand{\tablefont}{\roboto} 
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % Define a new right-aligned paragraph column type
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % Define a new left-aligned (no justification) paragraph column type
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % Define a new centered paragraph column type
