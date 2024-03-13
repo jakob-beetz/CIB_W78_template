@@ -1,4 +1,4 @@
-# Paper Tempalates for the CIB W78 Conference series
+# Paper Templates for the CIB W78 Conference series
 
 Along with rendered PDF examples.
 
