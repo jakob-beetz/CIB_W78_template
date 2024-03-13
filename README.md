@@ -20,6 +20,12 @@ There are two main branches of the full paper templates:
 - for popular text processors
 - .odt and .docx
 
+## Typography / Fonts
+Only free fonts are being used. Here is where to get them onto your local machine. If you use the LaTex template they are being installed automatically.
+- Linux Libertine O https://sourceforge.net/projects/linuxlibertine/
+- Source Code Pro https://github.com/adobe-fonts/source-code-pro
+- Roboto https://fonts.google.com/specimen/Roboto
+
 ## Contributing
 LaTex is a seven-headed hydra, and I have nothing but a humble pitchfork. If you spot issues, have comments etc. please use the discussion section or create an issue. PRs welcome.  
 
