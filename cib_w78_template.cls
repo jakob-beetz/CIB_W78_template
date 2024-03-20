@@ -27,7 +27,6 @@
 \usepackage{authblk}
 \usepackage{lipsum} 
 \usepackage{booktabs}
-\usepackage{listings}
 \usepackage{xcolor} % Optional: For customizing colors if desired
 \usepackage{titling} 
 \usepackage{array} % Required for manipulating table columns
